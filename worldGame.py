@@ -141,7 +141,6 @@ go = True
 victory_sound = random.choice(['soundeffects/good/pablo.mp3','soundeffects/good/rat-dance-music.mp3','soundeffects/good/mundian-to-bach-ke.mp3'])
 lastPrompts = ["Oof you lost"]
 numList = [-1 , 0 , 1]
-weights = [.005,.275,.72]
 country = random.choice(countries)
 gender = random.choice(genders)
 if gender == 'Female':
@@ -173,6 +172,16 @@ print("\nWelcome to the World Game!\n")
 print("Your goal is to travel the entire world while surviving\n")
 print("Disclaimer: All name, situations, or concidences are entirly incidental and non-intented.\nProceed at your own risk!\n")
 print("Your Country:",country,"\tName: ",name,"\tGender: ",gender,"\tAge: ",age)
+# weights / game difficulty
+print("Choose mode: 1. easy, 2. medium, 3. hard\n")
+mode = input("Enter the number of the mode: ")
+if mode == "1":
+    weights = [.005,.275,.72] # 33% win rate
+elif mode == "2":
+    weights = [.00729,.62210,.37061] # 20% win rate
+elif mode == "3":
+    weights = [.01041,.62014,.36945] # 10% win rate
+
 while go == True:
     print("\nDay: ",day)
     if day > 0:
