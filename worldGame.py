@@ -138,7 +138,7 @@ visited = []
 unvisited = countries.copy()
 prompt = ""
 go = True
-victory_sound = random.choice(['soundeffects/good/pablo.mp3','soundeffects/good/rat-dance-music.mp3','soundeffects/good/mundian-to-bach-ke.mp3'])
+victory_sound = random.choice(['soundeffects/pablo.mp3','soundeffects/rat-dance-music.mp3','soundeffects/pedro-song.mp3'])
 lastPrompts = ["Oof you lost"]
 numList = [-1 , 0 , 1]
 country = random.choice(countries)
@@ -163,7 +163,7 @@ def getPrompt():
     return prompt
 
 # start of game
-playsound('soundeffects/good/pedro-song.mp3',block=False)
+playsound('soundeffects/pedro-song.mp3',block=False)
 for i in range(8):
     print(' '*i,intro[i],' ')
     time.sleep(0.33)
@@ -202,12 +202,12 @@ while go == True:
     nextDay = input(" Enter 'n' to continue to... ")
     if nextDay.lower() == 'n':
         day += 1
-        playsound('soundeffects/good/correct.mp3',block=False)
+        playsound('soundeffects/correct.mp3',block=False)
     else:
         while nextDay.lower() != 'n':
             nextDay = input(" Enter 'n' to continue to... ")
         day += 1
-        playsound('soundeffects/good/correct.mp3',block=False)
+        playsound('soundeffects/correct.mp3',block=False)
     if len(visited) == len(countries):
         playsound(victory_sound,block=False)
         print("Congratulations You have visited all countries! Surviving the all the things of the world!")
